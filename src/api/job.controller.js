@@ -2,9 +2,8 @@ const { addEmailJob } = require("../services/queue.service");
 
 const createEmailJob = async (req, res) => {
   try {
-    const { email, message } = req.body;
-
-    await addEmailJob({ email, message });
+    const { data } = req.body;
+    await addEmailJob(data);
 
     res.json({
       success: true,
